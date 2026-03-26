@@ -16,7 +16,7 @@ async function run() {
     const restaurantsCollection = db.collection('restaurants')
 
     const point = { type: 'Point', coordinates: [-73.93414657, 40.82302903] }
-    const restaurantQuery = { location: { $near: { $geometry: point, $maxDistance: 500 } } }
+    const restaurantQuery = { location: { $near: { $geometry: point, $maxDistance: 325 } } }
     const restaurants = await restaurantsCollection.find(restaurantQuery).toArray()
     console.log(chalk.black.bgRedBright('Nearby restaurants:'), restaurants)
     console.log(chalk.redBright('Number of restaurants found:'), restaurants.length)

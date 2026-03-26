@@ -4,7 +4,7 @@ db.customers.drop()
 
 db.customers.insertOne({
   name: 'John',
-  scores: [920, 230]
+  scores: [920, 230, 50]
 })
 
 print('=============== 1 ==============')

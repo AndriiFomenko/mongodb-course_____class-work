@@ -13,7 +13,9 @@ async function run() {
 
     const db = client.db(dbName)
 
-    let existingCollections = (await db.listCollections().toArray()).map((c) => c.name)
+    let existingCollections = null
+    // Запит
+    existingCollections = (await db.listCollections().toArray()).map((c) => c.name)
     console.log('Existing collections:', existingCollections)
 
     if (!existingCollections.includes('customers')) {
@@ -26,6 +28,7 @@ async function run() {
       console.log('Collection "scores" created')
     }
 
+    // Перезапит
     existingCollections = (await db.listCollections().toArray()).map((c) => c.name)
     console.log('Collections after actions:', existingCollections)
 
